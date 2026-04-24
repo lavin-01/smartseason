@@ -44,11 +44,3 @@ Add a note or change the stage, then you'll see that the field state recalculate
 
 
 The insight is computed from live field data, so the recommendation updates as soon as new observations come in.
-
-## What Makes This Version Unique
-
-Use these points when comparing your project to more generic assessment submissions:
-
-
-
-
