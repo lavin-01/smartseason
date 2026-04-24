@@ -43,6 +43,45 @@ const login = async (req, res) => {
   }
 };
 
+const register = async (req, res) => {
+  try {
+    const { name, email, password, role } = req.body;
+
+    if (!name || !email || !password) {
+      return res.status(400).json({ error: 'Name, email, and password are required' });
+    }
+
+    const existing = await prisma.user.findUnique({ where: { email } });
+    if (existing) {
+      return res.status(409).json({ error: 'An account with this email already exists' });
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+    const user = await prisma.user.create({
+      data: {
+        name,
+        email,
+        passwordHash,
+        role: role === 'ADMIN' ? 'ADMIN' : 'AGENT',
+      },
+    });
+
+    const token = generateToken(user.id);
+
+    res.status(201).json({
+      token,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+    });
+  } catch (err) {
+    return respondWithDatabaseError(res, err, 'Registration failed');
+  }
+};
+
 const me = async (req, res) => {
   res.json({ user: req.user });
 };
@@ -60,4 +99,4 @@ const getAgents = async (req, res) => {
   }
 };
 
-module.exports = { login, me, getAgents };
+module.exports = { login, register, me, getAgents };

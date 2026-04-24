@@ -114,39 +114,6 @@
   color: var(--clay);
 }
 
-.demoButtons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  padding: 10px 14px;
-  background: var(--mist);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--parchment);
-}
-
-.demoLabel {
-  font-size: 0.75rem;
-  color: var(--clay);
-  flex: 1;
-}
-
-.demoBtn {
-  background: white;
-  border: 1px solid var(--parchment);
-  border-radius: var(--radius-sm);
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--bark);
-  transition: background 0.12s, border-color 0.12s;
-}
-
-.demoBtn:hover {
-  background: var(--parchment);
-  border-color: var(--wheat-light);
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -178,6 +145,27 @@
 }
 
 .input:focus {
+  border-color: var(--wheat);
+  box-shadow: 0 0 0 3px rgba(200, 151, 63, 0.12);
+}
+
+.select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--soil);
+  background: white;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A2F1A' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 34px;
+}
+
+.select:focus {
   border-color: var(--wheat);
   box-shadow: 0 0 0 3px rgba(200, 151, 63, 0.12);
 }
@@ -242,3 +230,4 @@
   .left { padding: 40px 24px; }
   .right { width: 100%; padding: 40px 24px; }
 }
+
