@@ -22,7 +22,7 @@ Best options:
 - `Kisumu Lowland Cassava`
 
 
-- summary
+summary
 - priority badge and score
 - reasons list
 - recommended next action
