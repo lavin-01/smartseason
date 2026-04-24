@@ -1,0 +1,206 @@
+.page { max-width: 1100px; animation: fadeIn 0.3s ease; }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.title { font-size: 2rem; color: var(--soil); margin-bottom: 4px; }
+.sub { color: var(--clay); font-size: 0.9rem; }
+
+.addBtn {
+  background: var(--soil);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.addBtn:hover { background: var(--bark); }
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.resultsMeta {
+  margin-bottom: 18px;
+  color: var(--clay);
+  font-size: 0.82rem;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: var(--soil);
+  background: white;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.search:focus { border-color: var(--wheat); }
+
+.filter {
+  padding: 9px 14px;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: var(--bark);
+  background: white;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.filter:focus { border-color: var(--wheat); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--clay);
+  font-size: 0.95rem;
+}
+.emptyIcon { font-size: 2.5rem; }
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 26, 14, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.25s ease;
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--parchment);
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--soil);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--clay);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s;
+}
+.closeBtn:hover { background: var(--mist); }
+
+.modalForm {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formField label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--bark);
+  letter-spacing: 0.02em;
+}
+
+.formField input, .formField select {
+  padding: 9px 12px;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: var(--soil);
+  background: white;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.formField input:focus, .formField select:focus { border-color: var(--wheat); }
+
+.formError {
+  background: var(--risk-bg);
+  border: 1px solid var(--risk-light);
+  color: var(--risk);
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cancelBtn {
+  background: none;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  color: var(--bark);
+  font-weight: 500;
+  transition: background 0.12s;
+}
+.cancelBtn:hover { background: var(--mist); }
+
+.submitBtn {
+  background: var(--soil);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.submitBtn:hover:not(:disabled) { background: var(--bark); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }

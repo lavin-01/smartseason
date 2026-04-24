@@ -1,0 +1,6 @@
+{
+  "prisma": {
+    "schema": "src/prisma/schema.prisma",
+    "seed": "node src/prisma/seed.js"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "smartseason",
+  "version": "1.0.0",
+  "description": "SmartSeason Field Monitoring System",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "db:setup": "cd backend && npm run db:generate && npm run db:migrate && npm run db:seed"
+  }
+}

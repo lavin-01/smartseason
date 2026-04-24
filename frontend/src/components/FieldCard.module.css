@@ -1,0 +1,141 @@
+.card {
+  background: white;
+  border: 1px solid var(--parchment);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeInUp 0.35s ease both;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--wheat-light);
+}
+
+.atRisk {
+  border-left: 3px solid var(--risk);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.headerMain {
+  min-width: 0;
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--soil);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.crop {
+  font-size: 0.83rem;
+  color: var(--clay);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.cropLabel {
+  font-size: 0.9rem;
+}
+
+.location {
+  color: var(--sage);
+  font-size: 0.8rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.insightBlock {
+  background: linear-gradient(180deg, rgba(237, 227, 204, 0.35), rgba(240, 235, 224, 0.6));
+  border: 1px solid var(--parchment);
+  border-radius: var(--radius-sm);
+  padding: 12px 13px;
+}
+
+.insightLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clay);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.insightSummary {
+  font-size: 0.84rem;
+  color: var(--soil);
+  line-height: 1.5;
+}
+
+.nextAction {
+  font-size: 0.78rem;
+  color: var(--bark);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.metricsRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.metric {
+  font-size: 0.75rem;
+  color: var(--clay);
+  background: var(--mist);
+  border: 1px solid var(--parchment);
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--clay);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--mist);
+  padding-top: 12px;
+  margin-top: 2px;
+}
+
+.planted {
+  flex: 1;
+}
+
+.tag {
+  background: var(--parchment);
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: var(--bark);
+}
+
+.tagMuted {
+  background: var(--risk-bg);
+  color: var(--risk);
+}

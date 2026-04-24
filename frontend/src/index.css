@@ -1,0 +1,119 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --soil: #2C1A0E;
+  --bark: #4A2F1A;
+  --clay: #7C4A2D;
+  --wheat: #C8973F;
+  --wheat-light: #E8C078;
+  --sage: #5A7A52;
+  --sage-light: #8AAE82;
+  --moss: #3D5C36;
+  --leaf: #6B9E5E;
+  --cream: #F5EFE0;
+  --parchment: #EDE3CC;
+  --paper: #FAF6EE;
+  --mist: #F0EBE0;
+  --risk: #C0392B;
+  --risk-light: #F5B7B1;
+  --risk-bg: #FDF2F0;
+  --complete: #27AE60;
+  --complete-light: #A9DFBF;
+  --complete-bg: #F0FBF4;
+  --active: #2471A3;
+  --active-light: #AED6F1;
+  --active-bg: #F0F7FB;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(44, 26, 14, 0.08), 0 1px 2px rgba(44, 26, 14, 0.06);
+  --shadow-md: 0 4px 12px rgba(44, 26, 14, 0.10), 0 2px 4px rgba(44, 26, 14, 0.06);
+  --shadow-lg: 0 10px 30px rgba(44, 26, 14, 0.12), 0 4px 8px rgba(44, 26, 14, 0.08);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 16px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  color: var(--soil);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--soil);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--mist); }
+::-webkit-scrollbar-thumb { background: var(--parchment); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--wheat-light); }
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-in {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--mist) 25%, var(--parchment) 50%, var(--mist) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}

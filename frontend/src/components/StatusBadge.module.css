@@ -1,0 +1,81 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.active {
+  background: var(--active-bg);
+  color: var(--active);
+  border: 1px solid var(--active-light);
+}
+
+.risk {
+  background: var(--risk-bg);
+  color: var(--risk);
+  border: 1px solid var(--risk-light);
+}
+
+.complete {
+  background: var(--complete-bg);
+  color: var(--complete);
+  border: 1px solid var(--complete-light);
+}
+
+.priority {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.priorityCritical {
+  background: var(--risk);
+  color: white;
+  border: 1px solid var(--risk);
+}
+
+.priorityHigh {
+  background: #fff4db;
+  color: #8b5e08;
+  border: 1px solid #f0d28b;
+}
+
+.priorityWatch {
+  background: #eef6ff;
+  color: var(--active);
+  border: 1px solid var(--active-light);
+}
+
+.priorityRoutine {
+  background: var(--mist);
+  color: var(--bark);
+  border: 1px solid var(--parchment);
+}
+
+.priorityClosed {
+  background: var(--complete-bg);
+  color: var(--moss);
+  border: 1px solid var(--complete-light);
+}
+
+.stageBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: var(--mist);
+  color: var(--bark);
+  border: 1px solid var(--parchment);
+}
+
+.planted { background: #F5F0FF; color: #6B4FA0; border-color: #D4C4F0; }
+.growing { background: var(--complete-bg); color: var(--moss); border-color: var(--complete-light); }
+.ready { background: #FFFBF0; color: #8B6914; border-color: #F0D98A; }
+.harvested { background: var(--mist); color: var(--clay); border-color: var(--parchment); }

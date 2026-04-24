@@ -1,0 +1,71 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  AGENT
+}
+
+enum Stage {
+  PLANTED
+  GROWING
+  READY
+  HARVESTED
+}
+
+model User {
+  id           String        @id @default(uuid())
+  name         String
+  email        String        @unique
+  passwordHash String        @map("password_hash")
+  role         Role          @default(AGENT)
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  assignedFields Field[]       @relation("AgentFields")
+  fieldUpdates   FieldUpdate[]
+
+  @@map("users")
+}
+
+model Field {
+  id           String        @id @default(uuid())
+  name         String
+  cropType     String        @map("crop_type")
+  plantingDate DateTime      @map("planting_date")
+  stage        Stage         @default(PLANTED)
+  location     String?
+  sizeHectares Float?        @map("size_hectares")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  assignedAgent   User?         @relation("AgentFields", fields: [assignedAgentId], references: [id])
+  assignedAgentId String?       @map("assigned_agent_id")
+
+  updates FieldUpdate[]
+
+  @@map("fields")
+}
+
+model FieldUpdate {
+  id        String   @id @default(uuid())
+  note      String?
+  stage     Stage?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  field   Field  @relation(fields: [fieldId], references: [id], onDelete: Cascade)
+  fieldId String @map("field_id")
+
+  agent   User   @relation(fields: [agentId], references: [id])
+  agentId String @map("agent_id")
+
+  @@map("field_updates")
+}
